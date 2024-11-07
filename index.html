@@ -10,6 +10,71 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" crossorigin="anonymous">
    <link rel="stylesheet" href="style.css">
+
+   <style>
+    .navbar-brand{
+     display: flex;
+     align-items: center;
+    
+    }
+     .navbar-brand img {
+         height: 30px;
+     }
+     .carousel-inner > .item > img {
+         width:640px;
+         height:360px;
+     }
+     .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+ width: 100%;
+}
+     .thumbnail img {
+         width: 100%;
+     }
+     .product-info h4 {
+         margin: 10px 0;
+     }
+     .ratings .glyphicon {
+         color: gold;
+     }
+     .footer {
+         background-color: #f8f8f8;
+         padding: 20px;
+         text-align: center;
+         margin-top: 20px;
+     }
+     .product-container {
+ position: relative;
+ width: 100%;
+}
+
+.discount-label {
+ position: absolute;
+ top: 8px;
+ left: 8px;
+ background-color: #FF0000; /* Bright red for visibility */
+ color: #FFFFFF;
+ padding: 4px 8px;
+ font-size: 12px;
+ font-weight: bold;
+ border-radius: 3px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+ z-index: 10;
+}
+
+.status-label {
+ position: absolute;
+ top: 8px;
+ right: 8px;
+ background-color: #FF8C00; /* Orange for status */
+ color: #FFFFFF;
+ padding: 4px 8px;
+ font-size: 12px;
+ font-weight: bold;
+ border-radius: 3px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+ z-index: 10;
+}
+ </style>
 </head>
 <body>
 
@@ -122,6 +187,9 @@
                 <!-- Sản phẩm 2 -->
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <div class="thumbnail">
+                        <!-- Discount and New Label -->
+                        <span class="discount-label">-20%</span>
+                        <span class="status-label">New</span>
                         <a href="mota.html">
                             <img src="./Image/capu.png" alt="Product 2">
                         </a>
