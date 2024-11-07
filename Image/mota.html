@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sunkissed</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="Image/Logo.png" alt="Logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./index.html">Cửa hàng</a></li>
+                    <li><a href="./giohang.html">Đơn hàng</a></li>
+                    <li><a href="#">Về chúng tôi</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i> Account</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-shopping-cart"></i> Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <div class="container product-details">
+        <div class="thumbnail">
+            <div class="row">
+                <!-- Main Product Image -->
+                <div class="col-sm-6">
+                    <img id="mainImage" class="img-responsive" src="http://placehold.it/750x600"
+                        alt="Main Product Image">
+
+                    <!-- Variant Thumbnails -->
+                    <div class="thumbnails row thumbnail-variants">
+                        <div class="col-xs-3">
+                            <img src="http://placehold.it/750x600" alt="Variant 1" onclick="changeImage(this.src)"
+                                class="img-thumbnail img-responsive">
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="http://placehold.it/750x600/555" alt="Variant 2" onclick="changeImage(this.src)"
+                                class="img-thumbnail img-responsive">
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="http://placehold.it/750x600/aaa" alt="Variant 3" onclick="changeImage(this.src)"
+                                class="img-thumbnail img-responsive">
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="http://placehold.it/750x600/f5a" alt="Variant 4" onclick="changeImage(this.src)"
+                                class="img-thumbnail img-responsive">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Description -->
+                <div class="col-sm-6">
+                    <h4 class="pull-right">$24.99</h4>
+                    <h4><a href="product.html">Product Name</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Number</label>
+                            <input type="number" class="form-control" id="number">
+                        </div>
+                        <div class="form-group">
+                            <label>Color</label>
+                            <select id="color" class="form-control">
+                                <option>Blue</option>
+                                <option>Green</option>
+                                <option>Red</option>
+                                <option>Yellow</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Size</label>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default">XS</button>
+                                <button type="button" class="btn btn-default">S</button>
+                                <button type="button" class="btn btn-default">M</button>
+                                <button type="button" class="btn btn-default">L</button>
+                                <button type="button" class="btn btn-default">XL</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Contact Seller</button>
+                            <button type="submit" class="btn btn-success">Add to Cart</button>
+                        </div>
+                    </form>
+                    <div class="description">
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.</p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">3 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span> 4.0 stars
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Reviews Section -->
+        <div class="well">
+            <div class="text-right">
+                <a class="btn btn-success">Leave a Review</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <strong>David More</strong>
+                <span class="pull-right">1 day ago</span>
+                <p>From <em>United States</em></p>
+                <p>This product was great in terms of quality. I would definitely buy another!</p>
+            </div>
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <strong>David More</strong>
+                <span class="pull-right">1 day ago</span>
+                <p>From <em>United States</em></p>
+                <p>This product was great in terms of quality. I would definitely buy another!</p>
+            </div>
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <strong>David More</strong>
+                <span class="pull-right">1 day ago</span>
+                <p>From <em>United States</em></p>
+                <p>This product was great in terms of quality. I would definitely buy another!
+                    <hr>
+                </p>
+            </div>
+            <hr>
+            <!-- Other Products Section -->
+            <div class="other-products">
+                <h3>
+                    <n>Other Products</n>
+                </h3>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/400x400/ff7f7f" alt="Other Product 1">
+                            <div class="caption">
+                                <h4>Product 1</h4>
+                                <p>Short description of Product 1.</p>
+                                <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/400x400/7f7fff" alt="Other Product 2">
+                            <div class="caption">
+                                <h4>Product 2</h4>
+                                <p>Short description of Product 2.</p>
+                                <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/400x400/7fff7f" alt="Other Product 3">
+                            <div class="caption">
+                                <h4>Product 3</h4>
+                                <p>Short description of Product 3.</p>
+                                <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            // JavaScript function to change the main image when clicking on a variant
+            function changeImage(src) {
+                document.getElementById("mainImage").src = src;
+            }
+        </script>
+</body>
+
+</html>
