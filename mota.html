@@ -5,23 +5,55 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sunkissed</title>
+    <title>Web bán hàng nhóm 5</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
 
-    <!-- get jQuery from the google apis -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .navbar-brand img {
+            height: 30px;
+        }
 
-    <!-- CSS STYLE-->
-    <link rel="stylesheet" type="text/css" href="css/xzoom.css" media="all" />
+        .carousel-inner>.item>img {
+            width: 100%;
+            height: 350px;
+        }
 
-    <!-- XZOOM JQUERY PLUGIN  -->
-    <script type="text/javascript" src="js/xzoom.min.js"></script>
+        .thumbnail img {
+            width: 100%;
+        }
+
+        .product-info h4 {
+            margin: 10px 0;
+        }
+
+        .ratings .glyphicon {
+            color: gold;
+        }
+
+        .footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .product-details {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-variants img {
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,10 +72,10 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="./index.html">Trang chủ</a></li>
-                    <li><a href="./index.html">Cửa hàng</a></li>
-                    <li><a href="./order.html">Đơn hàng</a></li>
-                    <li><a href="#">Về chúng tôi</a></li>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="form-group">
@@ -59,41 +91,37 @@
         </div>
     </nav>
 
-    <!-- Mô tả sản phẩm -->
+    <!-- Product Details Section -->
     <div class="container product-details">
         <div class="thumbnail">
             <div class="row">
-                <!-- Sản phẩm chính -->
+                <!-- Main Product Image -->
                 <div class="col-sm-6">
-                    <img class="xzoom img-responsive" src="Image/orange.png" 
-                        xoriginal="http://placehold.it/1500x1200" alt="Main Product Image">
+                    <img id="mainImage" class="img-responsive" src="http://placehold.it/750x600"
+                        alt="Main Product Image">
 
-                    <!-- Variant sản phẩm -->
-                    <div class="xzoom-thumbs row thumbnail-variants">
+                    <!-- Variant Thumbnails -->
+                    <div class="thumbnails row thumbnail-variants">
                         <div class="col-xs-3">
-                            <a href="Image/orange.png">
-                                <img class="xzoom-gallery img-thumbnail img-responsive" width="80" src="Image/orange.png" xpreview="Image/orange-preview.png.png" alt="Variant 1">
-                            </a>
+                            <img src="http://placehold.it/750x600" alt="Variant 1" onclick="changeImage(this.src)"
+                                class="img-thumbnail img-responsive">
                         </div>
                         <div class="col-xs-3">
-                            <a href="Image/capu.png">
-                                <img class="xzoom-gallery img-thumbnail img-responsive" width="80" src="Image/capu.png" xpreview="http://placehold.it/750x600/555" alt="Variant 2">
-                            </a>
+                            <img src="http://placehold.it/750x600/555" alt="Variant 2" onclick="changeImage(this.src)"
+                                class="img-thumbnail img-responsive">
                         </div>
                         <div class="col-xs-3">
-                            <a href="Image/lemon.png">
-                                <img class="xzoom-gallery img-thumbnail img-responsive" width="80" src="Image/lemon.png" xpreview="http://placehold.it/750x600/aaa" alt="Variant 3">
-                            </a>
+                            <img src="http://placehold.it/750x600/aaa" alt="Variant 3" onclick="changeImage(this.src)"
+                                class="img-thumbnail img-responsive">
                         </div>
                         <div class="col-xs-3">
-                            <a href="Image/pineap.png">
-                                <img class="xzoom-gallery img-thumbnail img-responsive" width="80" src="Image/pineap.png" xpreview="http://placehold.it/750x600/f5a" alt="Variant 4">
-                            </a>
+                            <img src="http://placehold.it/750x600/f5a" alt="Variant 4" onclick="changeImage(this.src)"
+                                class="img-thumbnail img-responsive">
                         </div>
                     </div>
                 </div>
 
-                <!-- Mô tả sản phẩm -->
+                <!-- Product Description -->
                 <div class="col-sm-6">
                     <h4 class="pull-right">$24.99</h4>
                     <h4><a href="product.html">Product Name</a></h4>
@@ -105,12 +133,12 @@
                             <input type="number" class="form-control" id="number">
                         </div>
                         <div class="form-group">
-                            <label>Flavor</label>
-                            <select id="Flavor" class="form-control">
-                                <option>Orange</option>
-                                <option>Cappuccino</option>
-                                <option>Lemon</option>
-                                <option>Pineapple</option>
+                            <label>Color</label>
+                            <select id="color" class="form-control">
+                                <option>Blue</option>
+                                <option>Green</option>
+                                <option>Red</option>
+                                <option>Yellow</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -145,12 +173,8 @@
                 </div>
             </div>
         </div>
-        <!-- Đánh giá -->
-        <div class="well">
-            <div class="text-right">
-                <a class="btn btn-success">Leave a Review</a>
-            </div>
-        </div>
+        <!-- Comment Section -->
+
         <div class="row">
             <div class="col-md-12">
                 <span class="glyphicon glyphicon-star"></span>
@@ -163,82 +187,53 @@
                 <p>From <em>United States</em></p>
                 <p>This product was great in terms of quality. I would definitely buy another!</p>
             </div>
-            <div class="col-md-12">
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-                <strong>David More</strong>
-                <span class="pull-right">1 day ago</span>
-                <p>From <em>United States</em></p>
-                <p>This product was great in terms of quality. I would definitely buy another!</p>
-            </div>
-            <div class="col-md-12">
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-                <strong>David More</strong>
-                <span class="pull-right">1 day ago</span>
-                <p>From <em>United States</em></p>
-                <p>This product was great in terms of quality. I would definitely buy another!
-                    <hr>
-                </p>
-            </div>
-            <hr>
-            <!-- Sản phẩm khác -->
-            <div class="other-products">
-                <h3>
-                    <n>Other Products</n>
-                </h3>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="thumbnail">
-                            <img src="./Image/latte.png" alt="Other Product 1">
-                            <div class="caption">
-                                <h4>Product 1</h4>
-                                <p>Short description of Product 1.</p>
-                                <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                            </div>
+        </div>
+
+        <!-- Other Products Section -->
+        <div class="other-products">
+            <h3>Other Products</h3>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/400x400/ff7f7f" alt="Other Product 1">
+                        <div class="caption">
+                            <h4>Product 1</h4>
+                            <p>Short description of Product 1.</p>
+                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="thumbnail">
-                            <img src="./Image/waterme.png" alt="Other Product 2">
-                            <div class="caption">
-                                <h4>Product 2</h4>
-                                <p>Short description of Product 2.</p>
-                                <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                            </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/400x400/7f7fff" alt="Other Product 2">
+                        <div class="caption">
+                            <h4>Product 2</h4>
+                            <p>Short description of Product 2.</p>
+                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="thumbnail">
-                            <img src="./Image/pineap.png" alt="Other Product 3">
-                            <div class="caption">
-                                <h4>Product 3</h4>
-                                <p>Short description of Product 3.</p>
-                                <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                            </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/400x400/7fff7f" alt="Other Product 3">
+                        <div class="caption">
+                            <h4>Product 3</h4>
+                            <p>Short description of Product 3.</p>
+                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
 
-
-        <script>
-            // javascript giúp người dùng thay đổi ảnh variant khi click vào
-            function changeImage(src) {
-                document.getElementById("mainImage").src = src;
-            }
-
-                $(document).ready(function() {
-                    $(".xzoom").xzoom({ tint: '#333', Xoffset: 15 });
-                });
-            </script>
+    <script>
+        // JavaScript function to change the main image when clicking on a variant
+        function changeImage(src) {
+            document.getElementById("mainImage").src = src;
+        }
+    </script>
 </body>
 
 </html>
