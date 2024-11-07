@@ -7,53 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web bán hàng nhóm 5</title>
 
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- get jQuery from the google apis -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- CSS STYLE-->
+    <link rel="stylesheet" type="text/css" href="xzoom.css" media="all" />
+
+    <!-- XZOOM JQUERY PLUGIN  -->
+    <script type="text/javascript" src="xzoom.js"></script>
 
     <style>
-        .navbar-brand img {
-            height: 30px;
-        }
 
-        .carousel-inner>.item>img {
-            width: 100%;
-            height: 350px;
-        }
-
-        .thumbnail img {
-            width: 100%;
-        }
-
-        .product-info h4 {
-            margin: 10px 0;
-        }
-
-        .ratings .glyphicon {
-            color: gold;
-        }
-
-        .footer {
-            background-color: #f8f8f8;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .product-details {
-            margin: 30px auto;
-            max-width: 800px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .thumbnail-variants img {
-            width: 100%;
-            cursor: pointer;
-        }
     </style>
+
 </head>
 
 <body>
@@ -91,36 +64,34 @@
         </div>
     </nav>
 
-    <!-- Product Details Section -->
-    <div class="container product-details">
+       <!-- Product Details Section -->
+       <div class="container product-details">
         <div class="thumbnail">
             <div class="row">
-                <!-- Main Product Image -->
+                <!-- Main Product Image with Zoom -->
                 <div class="col-sm-6">
-                    <img id="mainImage" class="img-responsive" src="./Image/orange.png"
-                        alt="Main Product Image">
-
-                    <!-- Variant Thumbnails -->
+                    <img id="mainImage" class="xzoom img-responsive" src="./Image/orange.png"
+                        xoriginal="./Image/orange.png" alt="Main Product Image">
+                    <!-- Variant Thumbnails with Click-to-Zoom -->
                     <div class="thumbnails row thumbnail-variants">
                         <div class="col-xs-3">
                             <img src="./Image/pineap.png" alt="Variant 1" onclick="changeImage(this.src)"
-                                class="img-thumbnail img-responsive">
+                                class="xzoom-gallery img-thumbnail img-responsive" xpreview="./Image/pineap.png">
                         </div>
                         <div class="col-xs-3">
                             <img src="./Image/waterme.png" alt="Variant 2" onclick="changeImage(this.src)"
-                                class="img-thumbnail img-responsive">
+                                class="xzoom-gallery img-thumbnail img-responsive" xpreview="./Image/waterme.png">
                         </div>
                         <div class="col-xs-3">
                             <img src="./Image/lemon.png" alt="Variant 3" onclick="changeImage(this.src)"
-                                class="img-thumbnail img-responsive">
+                                class="xzoom-gallery img-thumbnail img-responsive" xpreview="./Image/lemon.png">
                         </div>
                         <div class="col-xs-3">
                             <img src="./Image/latte.png" alt="Variant 4" onclick="changeImage(this.src)"
-                                class="img-thumbnail img-responsive">
+                                class="xzoom-gallery img-thumbnail img-responsive" xpreview="./Image/latte.png">
                         </div>
                     </div>
                 </div>
-
                 <!-- Product Description -->
                 <div class="col-sm-6">
                     <h4 class="pull-right">$24.99</h4>
@@ -144,11 +115,11 @@
                         <div class="form-group">
                             <label>Size</label>
                             <div class="btn-group">
-            
+
                                 <button type="button" class="btn btn-default">S</button>
                                 <button type="button" class="btn btn-default">M</button>
                                 <button type="button" class="btn btn-default">L</button>
-                                
+
                             </div>
                         </div>
                         <div class="form-group">
@@ -232,7 +203,13 @@
         // JavaScript function to change the main image when clicking on a variant
         function changeImage(src) {
             document.getElementById("mainImage").src = src;
+            document.getElementById("mainImage").setAttribute("xoriginal", src);
         }
+
+        // Initialize xzoom
+        $(document).ready(function () {
+            $('.xzoom, .xzoom-gallery').xzoom({ zoomWidth: 400, title: true, tint: '#333', Xoffset: 15 });
+        });
     </script>
 </body>
 
